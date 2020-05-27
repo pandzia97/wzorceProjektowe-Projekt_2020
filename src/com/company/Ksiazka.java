@@ -79,15 +79,15 @@ public class Ksiazka {
 
     @Override
     public String toString() {
-        return "Ksiazka{" +
+        return "\n\nKsiazka\n{" +
                 "tytul='" + tytul + '\'' +
-                ", autor='" + autor + '\'' +
-                ", rokWydania=" + rokWydania +
-                ", gatunek='" + gatunek + '\'' +
-                ", liczbaStron=" + liczbaStron +
-                ", oprawaMiekka=" + oprawaMiekka +
-                ", ksiazkaZniszczona=" + ksiazkaZniszczona +
-                ", naPolce=" + naPolce +
+                ", \nautor='" + autor + '\'' +
+                ", \nrokWydania=" + rokWydania +
+                ", \ngatunek='" + gatunek + '\'' +
+                ", \nliczbaStron=" + liczbaStron +
+                ", \noprawaMiekka=" + oprawaMiekka +
+                ", \nksiazkaZniszczona=" + ksiazkaZniszczona +
+                ", \nnaPolce=" + naPolce +
                 '}';
     }
 }
