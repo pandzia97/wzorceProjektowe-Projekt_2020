@@ -23,7 +23,6 @@ public class Ksiazka {
     }
 
 
-
     public static class Builder {
         private String tytul;
         private String autor;
