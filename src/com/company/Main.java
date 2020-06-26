@@ -32,17 +32,33 @@ public class Main {
         System.out.println("\nCzy ksiazka jest na polce? ");
         boolean h = scanner.nextBoolean();
 
+        System.out.println("\nIle wazy ta ksiazka?");
+        double i = scanner.nextDouble();
 
+
+        //boulider
         Ksiazka k = Ksiazka.builder(a, b)
                 .rokWydania(c)
                 .gatunek(d)
                 .liczbaStron(e)
-                .oprawaMiekka(f)
                 .ksiazkaZniszczona(g)
                 .naPolce(h)
+                .waga(i)
                 .build();
 
+
+
         System.out.println(k);
+
+
+        //dekorator
+        IKsiazka ksiazka = new KsiazkaWTwardejOprawie(k);
+
+
+        //adapter
+        PrettyPrinterAdapter prettyPrinterAdapter = new PrettyPrinterAdapter(k);
+
+
     }
 }
 

@@ -1,25 +1,25 @@
 package com.company;
 
-public class Ksiazka {
+public class Ksiazka implements IKsiazka {
     private String tytul;
     private String autor;
     private int rokWydania;
     private String gatunek;
     private int liczbaStron;
-    private boolean oprawaMiekka;
     private boolean ksiazkaZniszczona;
     private boolean naPolce;
+    private double waga;
 
-    public Ksiazka(String tytul, String autor, int rokWydania, String gatunek, int liczbaStron, boolean oprawaMiekka,
-                   boolean ksiazkaZniszczona, boolean naPolce) {
+    private Ksiazka(String tytul, String autor, int rokWydania, String gatunek, int liczbaStron, boolean oprawaMiekka,
+                    boolean ksiazkaZniszczona, double waga) {
         this.tytul = tytul;
         this.autor = autor;
         this.rokWydania = rokWydania;
         this.gatunek = gatunek;
         this.liczbaStron = liczbaStron;
-        this.oprawaMiekka = oprawaMiekka;
         this.ksiazkaZniszczona = ksiazkaZniszczona;
         this.naPolce = naPolce;
+        this.waga = waga;
     }
 
 
@@ -29,9 +29,9 @@ public class Ksiazka {
         private int rokWydania = 1997;
         private String gatunek = "fantastyka";
         private int liczbaStron = 100;
-        private boolean oprawaMiekka = true;
         private boolean ksiazkaZniszczona = false;
         private boolean naPolce = true;
+        private double waga = 3.2;
 
         public Builder(String tytul, String autor) {
             this.tytul = tytul;
@@ -53,11 +53,6 @@ public class Ksiazka {
             return this;
         }
 
-        public Builder oprawaMiekka(boolean oprawaMiekka) {
-            this.oprawaMiekka = oprawaMiekka;
-            return this;
-        }
-
         public Builder ksiazkaZniszczona(boolean ksiazkaZniszczona) {
             this.ksiazkaZniszczona = ksiazkaZniszczona;
             return this;
@@ -68,25 +63,65 @@ public class Ksiazka {
             return this;
         }
 
+        public Builder waga(double waga) {
+            this.waga = waga;
+            return this;
+        }
+
         public Ksiazka build() {
-            return new Ksiazka(tytul, autor, rokWydania, gatunek, liczbaStron, oprawaMiekka, ksiazkaZniszczona, naPolce );
+            return new Ksiazka(tytul, autor, rokWydania, gatunek, liczbaStron, ksiazkaZniszczona, naPolce, waga);
         }
     }
+
     public static Builder builder(String autor, String tytul) {
         return new Builder(tytul, autor);
     }
 
+    public String getTytul() {
+
+        return tytul;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public int getRokWydania() {
+        return rokWydania;
+    }
+
+    public String getGatunek() {
+        return gatunek;
+    }
+
+    public int getLiczbaStron() {
+        return liczbaStron;
+    }
+
+
+    public boolean isKsiazkaZniszczona() {
+        return ksiazkaZniszczona;
+    }
+
+    public boolean isNaPolce() {
+        return naPolce;
+    }
+
+    public double getWaga() {
+        return waga;
+    }
+
     @Override
     public String toString() {
-        return "\n\nKsiazka\n{" +
+        return "Ksiazka{" +
                 "tytul='" + tytul + '\'' +
-                ", \nautor='" + autor + '\'' +
-                ", \nrokWydania=" + rokWydania +
-                ", \ngatunek='" + gatunek + '\'' +
-                ", \nliczbaStron=" + liczbaStron +
-                ", \noprawaMiekka=" + oprawaMiekka +
-                ", \nksiazkaZniszczona=" + ksiazkaZniszczona +
-                ", \nnaPolce=" + naPolce +
+                ", autor='" + autor + '\'' +
+                ", rokWydania=" + rokWydania +
+                ", gatunek='" + gatunek + '\'' +
+                ", liczbaStron=" + liczbaStron +
+                ", ksiazkaZniszczona=" + ksiazkaZniszczona +
+                ", naPolce=" + naPolce +
+                ", waga=" + waga +
                 '}';
     }
 }
