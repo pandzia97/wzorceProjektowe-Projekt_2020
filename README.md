@@ -1,4 +1,5 @@
 # wzorceProjektowe-Projekt
-Projekt, który wykonałam na potrzebę przedmiotu Wzorce Projektowe - Projekt. 
+Final project for subject Wzorce projektowe -  projekt
 
-Projekt jest oparty na wzorcu builder 
+Project patterns - decorator, adapter, builder.
+
